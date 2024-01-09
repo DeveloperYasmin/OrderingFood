@@ -41,34 +41,34 @@ const AppLayout =() =>{
 
 const appRouter=createBrowserRouter([
 {
-    path:"/",
+    path:"/OrderingFood",
     element:<AppLayout/>,
     children:[
         {
-            path:"/",
+            path:"/OrderingFood",
             element:<Body/>,
         },
         {
-            path:"/about",
+            path:"/OrderingFood/about",
             element:<Suspense fallback={<h1>Loading</h1>}><About/></Suspense>,
         
         },
         {
-            path:"/contact",
+            path:"/OrderingFood/contact",
             element:<Contact/>
         },  
         {
-            path:"/restaurants/:resId",
+            path:"/OrderingFood/restaurants/:resId",
             element:<RestaurantMenu/>
         },  
 
         {
-            path:"/Cart",
+            path:"/OrderingFood/Cart",
             element:<Cart/>
         },  
        
         {
-            path:"/grocery",
+            path:"/OrderingFood/grocery",
             element:<Suspense fallback={<h1>Loading</h1>}><Grocery/></Suspense>
         }   
     ],
