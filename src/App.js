@@ -2,7 +2,7 @@ import React,{ Suspense, lazy, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header"
 import Body from "./components/Body";
-import { createBrowserRouter, RouterProvider,Outlet } from "react-router-dom";
+import { createHashRouter, RouterProvider,Outlet } from "react-router-dom";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Cart from "./components/Cart";
@@ -39,36 +39,36 @@ const AppLayout =() =>{
         )
 };  
 
-const appRouter=createBrowserRouter([
+const appRouter=createHashRouter([
 {
-    path:"/OrderingFood",
+    path:"/",
     element:<AppLayout/>,
     children:[
         {
-            path:"/OrderingFood",
+            path:"/",
             element:<Body/>,
         },
         {
-            path:"/OrderingFood/about",
+            path:"/about",
             element:<Suspense fallback={<h1>Loading</h1>}><About/></Suspense>,
         
         },
         {
-            path:"/OrderingFood/contact",
+            path:"/contact",
             element:<Contact/>
         },  
         {
-            path:"/OrderingFood/restaurants/:resId",
+            path:"/restaurants/:resId",
             element:<RestaurantMenu/>
         },  
 
         {
-            path:"/OrderingFood/Cart",
+            path:"/Cart",
             element:<Cart/>
         },  
        
         {
-            path:"/OrderingFood/grocery",
+            path:"/grocery",
             element:<Suspense fallback={<h1>Loading</h1>}><Grocery/></Suspense>
         }   
     ],
