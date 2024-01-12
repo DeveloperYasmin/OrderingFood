@@ -30,7 +30,7 @@ const AppLayout =() =>{
     return(
         <Provider store={appStore}>
         <UserContext.Provider value={{loggedInUser:username,setusername}}>
-<div className="bg-red-300 [w-100px] bg-cover bg-no-repeat ">     
+<div className="bg-red-300 bg-cover bg-no-repeat ">     
         <Header/> 
         <Outlet/>
         </div>

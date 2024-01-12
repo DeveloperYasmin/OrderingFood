@@ -16,26 +16,26 @@ const RestaurantMenu=()=>{
   console.log(resInfo)
   
   let categories=resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-        (c)=>c?.card?.card?.["@type"]=="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")    
+        (c)=>c?.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")    
 return (
-  <div className=" pt-44 h-screen bg-red-300 ">
-  <div className="bg-red-300  pl-64 font-serif">
+  <div className=" pt-44 pt-5 h-screen bg-red-300 ">
+  <div className="bg-red-300  md:pl-64 pl-20 font-serif">
 <h2 className=" font-bold text-2xl">{name}</h2>
 <h2>{cuisines.join(", ")}</h2>
 <h3>{areaName}, {city}</h3>
 <h3>💲{costForTwoMessage},  ⏳ {resInfo?.cards[0]?.card?.card?.info.sla.slaString}</h3>
 <h3>{avgRating} Stars⭐</h3>
-<label>------------------------------------------------------------------------------------------------------</label>
+<label>--------------------------------------------------------</label>
     {categories.map((category,index)=>(
      <RestCategory 
       key={category?.card?.card?.title}
       data={category?.card?.card}
-      showitems={index==showindex}
+      showitems={index===showindex}
       setshowindex={()=>
         setshowindex(index)
       }
 
-      hideitems={index!=showindex}
+      hideitems={index!==showindex}
       sethideindex={()=>
         sethideindex(setshowindex)
        }

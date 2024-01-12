@@ -13,7 +13,7 @@ class About extends React.Component{
    render()
    {
     return(
-       <div className="bg-red-300 pt-44 h-screen font-serif bg-cover bg-no-repeat">
+       <div className="bg-red-300 h-screen font-serif bg-cover bg-no-repeat">
         <h1>Hello from About Class</h1>
         <UserContext.Consumer>
       {({loggedInUser})=>( <h1>{loggedInUser}</h1>)}

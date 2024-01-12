@@ -27,11 +27,11 @@ const ItemList=({items})=>{
             </div>  
              <p className=" text-slate-500 mt-3 mb-5">{item?.card?.info?.description}</p>    
             </div>
-            <div className="w-4/12 p-3" >
+            <div className="md:w-4/12 p-3" >
             {item?.card.info.imageId?
             <div>
         <div className="absolute  [w-100px]">
-        <button className="bg-white text-sm p-1 mx-10 mt-24  rounded-lg shadow-lg text-green-900 w-20 font-semibold"
+        <button className="bg-white text-sm p-1 md:mx-10 mx-0 mt-24  rounded-lg shadow-lg text-green-900 w-20 font-semibold"
         onClick={()=>handleAddItem(item)}
         >ADD
         
